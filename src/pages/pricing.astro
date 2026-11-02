@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const APP_URL = 'https://.jardini.xyz';
+
+const plans = [
+  {
+    name: 'Free',
+    price: '$0',
+    note: 'For trying it out',
+    features: ['1 chat widget', '50 AI replies / month', '1 document'],
+  },
+  {
+    name: 'Pro',
+    price: '$19',
+    note: 'per month',
+    features: ['5 chat widgets', '2,000 AI replies / month', 'Unlimited documents', 'Remove branding'],
+    highlight: true,
+  },
+  {
+    name: 'Business',
+    price: '$49',
+    note: 'per month',
+    features: ['Unlimited widgets', '10,000 AI replies / month', 'Team members', 'Priority support'],
+  },
+];
+
+const faqs = [
+  {
+    q: 'How does the chat widget answer questions?',
+    a: 'It searches the documents you upload and uses an AI model to write an answer based only on that content.',
+  },
+  {
+    q: 'How do I add the widget to my website?',
+    a: 'Copy one script tag from your dashboard and paste it into your site. It works on WordPress, Shopify, and plain HTML.',
+  },
+  {
+    q: 'Which payment methods do you accept?',
+    a: 'We accept cards and mobile money through Paystack.',
+  },
+  {
+    q: 'Can I cancel anytime?',
+    a: 'Yes. You can cancel from your dashboard and keep access until the end of the billing period.',
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout
+  title="Pricing | YourProduct AI Chat Widget"
+  description="Simple pricing for the YourProduct AI chat widget. Start free, upgrade when you need more replies, widgets, and documents."
+  jsonLd={jsonLd}
+>
+  <main class="mx-auto max-w-5xl px-6 py-16">
+    <h1 class="text-center text-4xl font-bold">Simple, transparent pricing</h1>
+    <p class="mx-auto mt-4 max-w-2xl text-center text-slate-600">
+      Start free. Upgrade when your chat widget needs more replies and documents.
+    </p>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      {plans.map((p) => (
+        <div class={`rounded-2xl border p-6 ${p.highlight ? 'border-indigo-600 shadow-lg' : 'border-slate-200'}`}>
+          <h2 class="text-xl font-semibold">{p.name}</h2>
+          <p class="mt-4 text-4xl font-bold">{p.price}</p>
+          <p class="text-sm text-slate-500">{p.note}</p>
+          <ul class="mt-6 space-y-2 text-sm">
+            {p.features.map((f) => <li>✓ {f}</li>)}
+          </ul>
+          <a
+            href={`${APP_URL}/signup`}
+            class="mt-8 block rounded-lg bg-indigo-600 py-2 text-center font-medium text-white hover:bg-indigo-700"
+          >
+            Get started
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <section class="mt-20">
+      <h2 class="text-2xl font-bold">Frequently asked questions</h2>
+      <div class="mt-6 space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="font-semibold">{f.q}</h3>
+            <p class="mt-1 text-slate-600">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>
