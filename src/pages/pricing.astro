@@ -1,25 +1,25 @@
 ---
 import Layout from '../layouts/layout.astro';
 
-const APP_URL = 'https://.jardini.xyz';
+const APP_URL = 'https://ai-chat-widget-q6gx.onrender.com';
 
 const plans = [
   {
     name: 'Free',
-    price: '$0',
+    price: 'KSh 0',
     note: 'For trying it out',
     features: ['1 chat widget', '50 AI replies / month', '1 document'],
   },
   {
     name: 'Pro',
-    price: '$19',
+    price: 'KSh 300',
     note: 'per month',
     features: ['5 chat widgets', '2,000 AI replies / month', 'Unlimited documents', 'Remove branding'],
     highlight: true,
   },
   {
     name: 'Business',
-    price: '$49',
+    price: 'KSh 600',
     note: 'per month',
     features: ['Unlimited widgets', '10,000 AI replies / month', 'Team members', 'Priority support'],
   },
@@ -31,8 +31,8 @@ const faqs = [
     a: 'It searches the documents you upload and uses an AI model to write an answer based only on that content.',
   },
   {
-    q: 'How do I add the widget to my website?',
-    a: 'Copy one script tag from your dashboard and paste it into your site. It works on WordPress, Shopify, and plain HTML.',
+    q: 'How do I add it to my website?',
+    a: 'Copy one script tag from your dashboard and paste it into your site. It works with WordPress, Shopify, and custom websites.',
   },
   {
     q: 'Which payment methods do you accept?',
@@ -58,42 +58,61 @@ const jsonLd = [
 ---
 
 <Layout
-  title="Pricing | YourProduct AI Chat Widget"
-  description="Simple pricing for the YourProduct AI chat widget. Start free, upgrade when you need more replies, widgets, and documents."
+  title="Pricing | Nudge AI Chat Widget"
+  description="Simple pricing for the Nudge AI chat widget. Start free and upgrade when you need more replies, widgets, and documents."
   jsonLd={jsonLd}
 >
-  <main class="mx-auto max-w-5xl px-6 py-16">
-    <h1 class="text-center text-4xl font-bold">Simple, transparent pricing</h1>
-    <p class="mx-auto mt-4 max-w-2xl text-center text-slate-600">
-      Start free. Upgrade when your chat widget needs more replies and documents.
-    </p>
+  <main class="mx-auto w-full max-w-6xl flex-1 px-6 py-16 sm:py-20">
+    <section class="mx-auto max-w-3xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">Simple pricing</p>
+      <h1 class="mt-3 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
+        A plan that grows with your business.
+      </h1>
+      <p class="mt-5 text-lg leading-8 text-slate-600">
+        Start free. Upgrade when your chat needs more replies, widgets, or documents.
+      </p>
+    </section>
 
-    <div class="mt-12 grid gap-6 md:grid-cols-3">
-      {plans.map((p) => (
-        <div class={`rounded-2xl border p-6 ${p.highlight ? 'border-indigo-600 shadow-lg' : 'border-slate-200'}`}>
-          <h2 class="text-xl font-semibold">{p.name}</h2>
-          <p class="mt-4 text-4xl font-bold">{p.price}</p>
-          <p class="text-sm text-slate-500">{p.note}</p>
-          <ul class="mt-6 space-y-2 text-sm">
-            {p.features.map((f) => <li>✓ {f}</li>)}
-          </ul>
-          <a
-            href={`${APP_URL}/signup`}
-            class="mt-8 block rounded-lg bg-indigo-600 py-2 text-center font-medium text-white hover:bg-indigo-700"
-          >
-            Get started
-          </a>
-        </div>
-      ))}
-    </div>
+    <section id="plans" aria-label="Nudge plans" class="scroll-mt-8">
+      <div class="mt-12 grid gap-5 md:grid-cols-3">
+        {plans.map((plan) => (
+          <article class={`flex flex-col rounded-2xl border bg-white p-6 sm:p-8 ${plan.highlight ? 'border-indigo-600 ring-1 ring-indigo-600 shadow-xl shadow-indigo-100' : 'border-slate-200 shadow-sm'}`}>
+            {plan.highlight && (
+              <p class="mb-4 w-fit rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">
+                Most popular
+              </p>
+            )}
+            <h2 class="text-xl font-semibold text-slate-900">{plan.name}</h2>
+            <p class="mt-5 text-4xl font-semibold tracking-tight text-slate-950">{plan.price}</p>
+            <p class="mt-1 text-sm text-slate-500">{plan.note}</p>
+            <ul class="mt-7 flex-1 space-y-3">
+              {plan.features.map((feature) => (
+                <li class="flex gap-3 text-sm text-slate-600">
+                  <span class="font-semibold text-indigo-700" aria-hidden="true">✓</span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <a
+              href={`${APP_URL}/signup`}
+              class={`mt-8 inline-flex min-h-11 items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 ${plan.highlight ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'border border-slate-300 text-slate-800 hover:bg-slate-50'}`}
+            >
+              Get started
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
 
-    <section class="mt-20">
-      <h2 class="text-2xl font-bold">Frequently asked questions</h2>
-      <div class="mt-6 space-y-6">
-        {faqs.map((f) => (
-          <div>
-            <h3 class="font-semibold">{f.q}</h3>
-            <p class="mt-1 text-slate-600">{f.a}</p>
+    <section class="mx-auto mt-20 max-w-3xl">
+      <h2 class="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+        Frequently asked questions
+      </h2>
+      <div class="mt-8 divide-y divide-slate-200 border-y border-slate-200">
+        {faqs.map((faq) => (
+          <div class="py-6">
+            <h3 class="font-semibold text-slate-900">{faq.q}</h3>
+            <p class="mt-2 leading-7 text-slate-600">{faq.a}</p>
           </div>
         ))}
       </div>

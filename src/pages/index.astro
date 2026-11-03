@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/layout.astro';
 
-const APP_URL = 'https://.jardini.xyz';
+const APP_URL = 'https://ai-chat-widget-q6gx.onrender.com';
 
 const jsonLd = [
   {
@@ -25,21 +25,267 @@ const jsonLd = [
     },
   },
 ];
+
+const steps = [
+  {
+    number: '01',
+    title: 'Add your knowledge',
+    description:
+      'Upload the PDFs and documents your team already uses to help customers.',
+  },
+  {
+    number: '02',
+    title: 'Make it yours',
+    description:
+      'Choose a name and welcome message that feel right for your business.',
+  },
+  {
+    number: '03',
+    title: 'Put it to work',
+    description:
+      'Add one small snippet to your site and let Nudge handle common questions.',
+  },
+];
+
+const features = [
+  {
+    title: 'Answers grounded in your docs',
+    description:
+      'Nudge uses your own PDFs and guides, so customers get useful answers based on your business.',
+  },
+  {
+    title: 'Set up without the busywork',
+    description:
+      'Add your documents, copy one snippet, and get a helpful chat on your website.',
+  },
+  {
+    title: 'There when customers need you',
+    description:
+      'Give people a clear next step, even when your team is away or helping someone else.',
+  },
+  {
+    title: 'Your brand, your experience',
+    description:
+      'Keep the conversation welcoming and consistent with the way your business speaks.',
+  },
+  {
+    title: 'Works with your website',
+    description:
+      'Add Nudge to a custom site or popular website builder with a simple embed.',
+  },
+  {
+    title: 'Clear, practical pricing',
+    description:
+      'Start with a free plan and choose an upgrade only when your business needs more.',
+  },
+];
+
+const plans = [
+  {
+    name: 'Free',
+    price: 'KSh 0',
+    note: 'For trying it out',
+    features: ['1 chat widget', '50 AI replies / month', '1 document'],
+  },
+  {
+    name: 'Pro',
+    price: 'KSh 300',
+    note: 'per month',
+    features: ['5 chat widgets', '2,000 AI replies / month', 'Unlimited documents'],
+    highlight: true,
+  },
+  {
+    name: 'Business',
+    price: 'KSh 600',
+    note: 'per month',
+    features: ['Unlimited widgets', '10,000 AI replies / month', 'Team members'],
+  },
+];
 ---
 
 <Layout
-  title="YourProduct: AI Chat Widget for Customer Support"
-  description="Add an AI chat widget to your website that answers customer questions from your own PDFs and docs. Set up in minutes."
+  title="Nudge | AI chat widget for answers from your business documents"
+  description="Help customers get answers from your own PDFs and docs. Add Nudge, the simple AI chat widget for your website, in minutes."
   jsonLd={jsonLd}
 >
   <main>
-    <h1>AI chat widget that answers from your own documents</h1>
-    <p>
-      YourProduct is an embeddable AI chat widget. Upload your PDFs and docs,
-      paste one script tag on your site, and customers get accurate answers
-      instantly.
-    </p>
-    <a href={`${APP_URL}/signup`}>Start free</a>
-    <a href={`${APP_URL}/login`}>Log in</a>
+    <section class="mx-auto grid max-w-6xl items-center gap-14 px-6 pb-20 pt-16 sm:pt-24 lg:grid-cols-2 lg:gap-16 lg:pb-28">
+      <div>
+        <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50 px-3 py-1 text-sm font-medium text-indigo-700">
+          <span class="size-2 rounded-full bg-indigo-600" aria-hidden="true"></span>
+          Helpful answers, powered by your business
+        </p>
+        <h1 class="max-w-2xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+          Your customers have questions. Nudge has the answers.
+        </h1>
+        <p class="mt-6 max-w-xl text-lg leading-8 text-slate-600">
+          Add an AI chat widget that answers from your own PDFs and docs, so customers can get help without waiting.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a
+            href={`${APP_URL}/signup`}
+            class="inline-flex min-h-12 items-center justify-center rounded-lg bg-indigo-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Start free
+          </a>
+          <a
+            href="#demo"
+            class="inline-flex min-h-12 items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-800 transition hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            See demo
+          </a>
+        </div>
+        <p class="mt-4 text-sm text-slate-500">No credit card needed to get started.</p>
+      </div>
+
+      <div
+        id="demo"
+        class="mx-auto w-full max-w-md scroll-mt-8 rounded-2xl border border-slate-200 bg-white p-3 shadow-2xl shadow-slate-200/70 sm:p-4"
+        role="region"
+        aria-label="Example Nudge customer chat"
+      >
+        <div class="flex items-center justify-between border-b border-slate-100 px-3 py-3">
+          <div class="flex items-center gap-3">
+            <span class="flex size-10 items-center justify-center rounded-xl bg-indigo-600 text-lg font-bold text-white" aria-hidden="true">n</span>
+            <div>
+              <p class="font-semibold text-slate-900">Nudge assistant</p>
+              <p class="flex items-center gap-1.5 text-xs text-slate-500">
+                <span class="size-2 rounded-full bg-emerald-500" aria-hidden="true"></span>
+                Here to help
+              </p>
+            </div>
+          </div>
+          <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600">DEMO</span>
+        </div>
+        <div class="space-y-5 px-3 py-6">
+          <p class="mx-auto w-fit rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-500">Today</p>
+          <div class="ml-auto max-w-[85%] rounded-2xl rounded-br-sm bg-indigo-600 px-4 py-3 text-sm leading-6 text-white">
+            Hi! What do I need to open an account?
+          </div>
+          <div class="max-w-[90%] rounded-2xl rounded-bl-sm bg-slate-100 px-4 py-3 text-sm leading-6 text-slate-800">
+            You’ll need a valid ID and proof of address. I found that in the account opening guide. Want me to share the full checklist?
+            <p class="mt-2 text-xs text-slate-500">Based on: Account opening guide.pdf</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between rounded-xl border border-slate-200 px-4 py-3 text-sm text-slate-500">
+          <span>Ask a question...</span>
+          <span class="flex size-8 items-center justify-center rounded-lg bg-indigo-600 text-white" aria-hidden="true">↑</span>
+        </div>
+        <p class="py-3 text-center text-xs text-slate-500">Answers from your business, with Nudge</p>
+      </div>
+    </section>
+
+    <section class="border-y border-slate-200 bg-slate-50">
+      <div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+        <div class="max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">How it works</p>
+          <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+            From your documents to a helpful chat.
+          </h2>
+          <p class="mt-4 text-lg text-slate-600">Three simple steps. No complicated setup.</p>
+        </div>
+        <ol class="mt-10 grid gap-8 md:grid-cols-3">
+          {steps.map((step) => (
+            <li class="rounded-2xl border border-slate-200 bg-white p-6">
+              <p class="text-sm font-semibold text-indigo-700">{step.number}</p>
+              <h3 class="mt-4 text-xl font-semibold text-slate-900">{step.title}</h3>
+              <p class="mt-3 leading-7 text-slate-600">{step.description}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section id="features" class="mx-auto max-w-6xl scroll-mt-8 px-6 py-20 sm:py-24">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">Made to be useful</p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+          A better way to answer everyday questions.
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">Give customers quick help and give your team room to focus.</p>
+      </div>
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {features.map((feature, index) => (
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 transition hover:border-indigo-200 hover:shadow-lg hover:shadow-slate-200/50">
+            <span class="flex size-10 items-center justify-center rounded-xl bg-indigo-50 text-sm font-semibold text-indigo-700" aria-hidden="true">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <h3 class="mt-5 text-lg font-semibold text-slate-900">{feature.title}</h3>
+            <p class="mt-2 leading-7 text-slate-600">{feature.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="border-y border-slate-200 bg-slate-50">
+      <div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+        <div class="rounded-3xl border border-slate-200 bg-white px-6 py-12 text-center shadow-sm sm:px-12">
+          <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">Built for growing teams</p>
+          <h2 class="mx-auto mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+            Thoughtful support starts with the knowledge you already have.
+          </h2>
+          <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-600">
+            Nudge is made for small businesses and developers who want to make good information easier to find.
+          </p>
+          <div class="mt-8 rounded-xl border border-dashed border-slate-300 bg-slate-50 px-5 py-4 text-sm text-slate-500">
+            Customer stories and logos coming soon
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6 py-20 sm:py-24">
+      <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+        <div class="max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">Pricing</p>
+          <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+            Start free. Grow when you’re ready.
+          </h2>
+          <p class="mt-4 text-lg text-slate-600">Straightforward plans for every stage of your business.</p>
+        </div>
+        <a
+          href="/pricing"
+          class="font-semibold text-indigo-700 underline decoration-indigo-200 underline-offset-4 hover:text-indigo-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-600"
+        >
+          Compare all plans
+        </a>
+      </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-3">
+        {plans.map((plan) => (
+          <article class={`rounded-2xl border p-6 ${plan.highlight ? 'border-indigo-600 ring-1 ring-indigo-600' : 'border-slate-200'}`}>
+            <h3 class="text-lg font-semibold text-slate-900">{plan.name}</h3>
+            <p class="mt-5 text-4xl font-semibold tracking-tight text-slate-950">{plan.price}</p>
+            <p class="mt-1 text-sm text-slate-500">{plan.note}</p>
+            <ul class="mt-6 space-y-3">
+              {plan.features.map((feature) => (
+                <li class="flex gap-2 text-sm text-slate-600">
+                  <span class="font-semibold text-indigo-700" aria-hidden="true">✓</span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+      <p class="mt-5 text-sm text-slate-500">Plan details and limits may change. See the pricing page for full details.</p>
+    </section>
+
+    <section class="bg-slate-950">
+      <div class="mx-auto max-w-6xl px-6 py-16 text-center sm:py-20">
+        <p class="text-sm font-semibold uppercase tracking-wide text-indigo-300">Make every answer easier</p>
+        <h2 class="mx-auto mt-3 max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          Give your customers a helpful answer, right when they need one.
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-300">
+          Bring your documents together with a chat experience that’s simple to set up.
+        </p>
+        <a
+          href={`${APP_URL}/signup`}
+          class="mt-8 inline-flex min-h-12 items-center justify-center rounded-lg bg-indigo-500 px-6 py-3 font-semibold text-white transition hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          Start free
+        </a>
+      </div>
+    </section>
   </main>
 </Layout>

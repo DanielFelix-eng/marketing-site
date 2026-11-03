@@ -1,0 +1,263 @@
+---
+import Layout from '../../layouts/layout.astro';
+
+const APP_URL = 'https://ai-chat-widget-q6gx.onrender.com';
+
+const comparisons = {
+  tidio: {
+    name: 'Tidio',
+    keyword: 'Tidio alternative',
+    title: 'Tidio Alternative for African Businesses | Nudge',
+    description:
+      'Compare Nudge and Tidio for AI answers from your business documents, setup, pricing, and payment needs in Kenya and Africa.',
+    sources: [
+      { label: 'Tidio pricing', url: 'https://www.tidio.com/pricing/' },
+      { label: 'Lyro AI Agent', url: 'https://www.tidio.com/ai-agent/' },
+    ],
+    answer:
+      'Nudge is best for small businesses and developers who want a focused website chat that answers from their own documents, with plans displayed in Kenyan shillings. Tidio may suit teams looking for a broader help desk with live chat, ticketing, and AI automation.',
+    rows: [
+      { label: 'Price', nudge: 'Free; paid plans listed at KSh 300 and KSh 600/month.', other: 'Starter: $24.17/month billed annually for 100 billable conversations; Growth: from $49.17/month for 250; Plus: $300/month plus usage.' },
+      { label: 'Setup time', nudge: 'Upload documents and add one script tag; setup time depends on your site.', other: 'Lyro says it can be added to a website in a few clicks; no fixed setup duration is stated.' },
+      { label: 'Answers from your documents', nudge: 'Answers use uploaded PDFs and business documents.', other: 'Lyro uses support content and guidance. Its product page does not specify PDF file support.' },
+      { label: 'M-Pesa / Paystack support', nudge: 'Paystack is used for Nudge plan payments; available checkout methods depend on the account.', other: 'Tidio’s public pricing page does not list M-Pesa or Paystack as plan payment methods.' },
+      { label: 'Branding removal', nudge: 'The Pro plan lists branding removal.', other: 'The Plus plan lists “Custom branding”; the pricing summary does not detail each branding control.' },
+      { label: 'Free plan', nudge: 'A free plan is available.', other: 'Tidio advertises a free plan; its pricing page lists 50 one-off Lyro AI conversations.' },
+    ],
+    strongerTitle: 'Where Tidio is stronger',
+    stronger: [
+      'Tidio may fit better if your team wants a shared support workspace. Its pricing page lists live chat, ticketing, a live visitor list, and analytics on selected plans. Those tools can help teams manage human replies alongside automation.',
+      'Tidio presents Lyro as an AI agent that uses support content, can be added to a website in a few clicks, and supports human handoff. Teams that need an agent workflow as well as document answers may value that broader feature set.',
+      'Tidio offers plan tiers with different conversation allowances and AI usage options. Its Plus plan lists premium support, a dedicated success manager, custom branding, and a $300 monthly starting price plus usage. Compare total expected cost, not just the entry price.',
+    ],
+    nudgeTitle: 'Where Nudge is stronger',
+    nudge: [
+      'Nudge focuses on letting visitors ask questions and get answers from a business’s uploaded PDFs and documents. For a small team with policies, product guides, or FAQs, this keeps the product centered on its existing knowledge rather than a larger support operation.',
+      'The setup path is to upload documents, configure the widget, and paste one script tag into the website. There is no fixed time promise: document quality, website access, and testing affect launch.',
+      'Nudge offers a free plan and lists paid tiers at KSh 300 and KSh 600 per month. Paystack is used for payments; the payment methods available to a business depend on its Paystack account.',
+    ],
+    choose: [
+      'Choose Nudge if you want a focused website chat that answers from your documents and prefer plans displayed in KSh. It may suit a business that does not need a full support desk to get started.',
+      'Choose Tidio if your team needs a broader support workspace and its features, integrations, and usage model fit your process. It may suit teams prioritising ticketing or automation.',
+      'Test the same customer questions in both products, including one question not covered by your docs. Check answer quality and human handoff, then compare total cost at your expected volume. Ask both providers about M-Pesa, Paystack, data locations, document limits, and branding.',
+    ],
+    localNote:
+      'For African businesses, compare payment methods, currency, mobile performance, and data handling as well as features. Nudge lists KSh plans and uses Paystack for payments. Tidio’s pricing page does not list M-Pesa or Paystack as plan payment options; check available checkout methods for your region.',
+    faqs: [
+      {
+        q: 'Is Nudge a direct replacement for Tidio?',
+        a: 'Not necessarily. Nudge focuses on answers from a business’s own uploaded documents in an embeddable chat. Tidio’s pricing page lists broader support tools, including live chat and ticketing, alongside Lyro AI. Compare the workflows you need.',
+      },
+      {
+        q: 'Can Nudge answer questions from PDFs?',
+        a: 'Yes. Nudge is designed to use uploaded PDFs and other business documents as sources for widget answers. Test your own documents before launch, especially scanned PDFs, tables, and frequently updated content.',
+      },
+      {
+        q: 'Does either product support M-Pesa or Paystack?',
+        a: 'Nudge uses Paystack, whose enabled methods depend on the merchant account. Tidio’s public pricing page does not list M-Pesa or Paystack as plan payment options.',
+      },
+      {
+        q: 'Which product costs less?',
+        a: 'It depends on limits and usage. Nudge lists KSh 300 and KSh 600 monthly plans. Tidio lists Starter at $24.17/month when billed annually, Growth from $49.17/month, and Plus from $300/month plus usage. Convert currency and compare your expected usage.',
+      },
+    ],
+  },
+  intercom: {
+    name: 'Intercom',
+    keyword: 'Intercom alternative',
+    title: 'Intercom Alternative for African Businesses | Nudge',
+    description:
+      'Compare Nudge and Intercom for document-based AI chat, setup, pricing, and payment needs for businesses in Kenya and Africa.',
+    sources: [
+      { label: 'Intercom pricing', url: 'https://www.intercom.com/pricing' },
+    ],
+    answer:
+      'Nudge is best for a small business that wants a focused embeddable chat answering from its own documents, with plans displayed in Kenyan shillings. Intercom may be better for support teams looking for a customer-service platform with shared inboxes, a help center, and team workflows.',
+    rows: [
+      { label: 'Price', nudge: 'Free; paid plans listed at KSh 300 and KSh 600/month.', other: 'Essential starts at $19/seat/month billed annually ($29 monthly), plus $0.99 per Fin outcome.' },
+      { label: 'Setup time', nudge: 'Upload documents and add one script tag; setup time depends on your site.', other: 'Intercom says standalone Fin can be set up in under an hour on an existing help desk; a full Intercom setup varies.' },
+      { label: 'Answers from your documents', nudge: 'Answers use uploaded PDFs and business documents.', other: 'Fin is included in plans; Essential lists a public help center. The pricing page does not specify PDF upload support.' },
+      { label: 'M-Pesa / Paystack support', nudge: 'Paystack is used for Nudge plan payments; available checkout methods depend on the account.', other: 'Intercom’s pricing page does not list M-Pesa or Paystack as plan payment methods.' },
+      { label: 'Branding removal', nudge: 'The Pro plan lists branding removal.', other: 'Expert lists multibrand Messenger and Help Center; branding removal is not specified.' },
+      { label: 'Free plan', nudge: 'A free plan is available.', other: 'A 14-day free trial is offered; no ongoing free plan is listed.' },
+    ],
+    strongerTitle: 'Where Intercom is stronger',
+    stronger: [
+      'Intercom is a broader customer-service platform. Essential includes a shared inbox, ticketing, Messenger, pre-built reports, and a public help center. Advanced adds multiple inboxes and a workflow automation builder; Expert adds SSO and multibrand Messenger and help center.',
+      'Fin is included with listed plans and costs $0.99 per outcome. Intercom also charges per teammate seat, so estimate both seat and outcome costs against your expected volume.',
+      'Intercom also offers Fin for teams that already use another help desk, with no seat charge and a stated setup time under an hour. This can suit established support teams that want to add AI without replacing their current inbox.',
+    ],
+    nudgeTitle: 'Where Nudge is stronger',
+    nudge: [
+      'Nudge focuses on website chat answers from a business’s own uploaded documents. Without a need for a multi-agent support console, teams can focus their evaluation on answer quality and source handling.',
+      'The setup is to upload documents, configure the widget, and add one script tag. There is no fixed time guarantee; preparation and website access affect launch.',
+      'Nudge lists a free plan and KSh 300 and KSh 600 monthly tiers, with Paystack for payments. Intercom lists seat pricing and Fin outcome pricing, so estimate total cost for your team size and use.',
+    ],
+    choose: [
+      'Choose Nudge to turn your documents into website chat answers without adopting a broad service platform. Its KSh pricing and Paystack payments may suit a small business.',
+      'Choose Intercom if your team needs its shared inbox, ticketing, help center, automation, and AI capabilities. This may suit an established multi-channel support operation.',
+      'Test the same questions in both tools, including an unanswered question and a request for a human. Compare answer quality, setup effort, data controls, and total cost. Ask providers about document formats, retention, payment methods, branding, taxes, and usage charges.',
+    ],
+    localNote:
+      'For African teams, check payment methods, currency, mobile performance, and data handling. Nudge lists Paystack and KSh prices. Intercom’s pricing page does not list M-Pesa or Paystack as plan payment methods.',
+    faqs: [
+      {
+        q: 'Is Nudge cheaper than Intercom?',
+        a: 'Nudge lists KSh 300 and KSh 600 monthly paid plans. Intercom lists per-seat charges starting at $19 per seat/month with annual billing, plus $0.99 per Fin outcome. Compare total cost for your expected usage.',
+      },
+      {
+        q: 'Does Intercom answer from uploaded PDFs?',
+        a: 'Intercom’s pricing page lists Fin AI Agent and a public help center but does not specify PDF upload support. Nudge is designed around uploaded business documents such as PDFs.',
+      },
+      {
+        q: 'Can I install Nudge without a developer?',
+        a: 'Nudge’s installation is to add one script tag to a website. Whether you need help depends on your website platform and access. Test it on a staging page before publishing to customers.',
+      },
+      {
+        q: 'Does Intercom offer M-Pesa or Paystack?',
+        a: 'Intercom’s pricing page does not list M-Pesa or Paystack as plan payment methods. Nudge uses Paystack; available methods depend on the merchant account.',
+      },
+    ],
+  },
+};
+
+export function getStaticPaths() {
+  return [
+    { params: { competitor: 'tidio' } },
+    { params: { competitor: 'intercom' } },
+  ];
+}
+
+const competitor = Astro.params.competitor;
+if (competitor !== 'tidio' && competitor !== 'intercom') {
+  throw new Error(`Unsupported comparison: ${competitor}`);
+}
+const comparison = comparisons[competitor];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: comparison.faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+};
+---
+
+<Layout
+  title={comparison.title}
+  description={comparison.description}
+  jsonLd={jsonLd}
+>
+  <main class="mx-auto w-full max-w-5xl px-6 py-14 sm:py-20">
+    <article class="space-y-14">
+      <header class="space-y-5">
+        <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">Nudge vs {comparison.name}</p>
+        <h1 class="text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">{comparison.keyword}</h1>
+        <p class="max-w-3xl text-lg leading-8 text-slate-700">{comparison.answer}</p>
+        <p class="text-sm leading-6 text-slate-500">
+          Competitor pricing and product details were checked against official pages on November 3, 2026; they can change. Sources:
+          {comparison.sources.map((source, index) => (
+            <>
+              {index > 0 && ', '}
+              <a class="font-medium text-indigo-700 underline underline-offset-4" href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a>
+            </>
+          ))}.
+        </p>
+      </header>
+
+      <section aria-labelledby="comparison-heading" class="space-y-5">
+        <div>
+          <h2 id="comparison-heading" class="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+            Nudge vs {comparison.name}: at a glance
+          </h2>
+          <p class="mt-3 leading-7 text-slate-600">
+            Use this table to identify what to verify for your use case. Prices, plan limits, payment availability, and product features can change, so confirm them with each provider before deciding.
+          </p>
+        </div>
+        <div class="overflow-x-auto rounded-2xl border border-slate-200">
+          <table class="w-full min-w-[700px] border-collapse text-left text-sm">
+            <thead class="bg-slate-50 text-slate-900">
+              <tr>
+                <th scope="col" class="border-b border-slate-200 px-4 py-4 font-semibold">What to compare</th>
+                <th scope="col" class="border-b border-slate-200 px-4 py-4 font-semibold">Nudge</th>
+                <th scope="col" class="border-b border-slate-200 px-4 py-4 font-semibold">{comparison.name}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparison.rows.map((row) => (
+                <tr class="align-top even:bg-slate-50/70">
+                  <th scope="row" class="border-b border-slate-200 px-4 py-4 font-semibold text-slate-900">{row.label}</th>
+                  <td class="border-b border-slate-200 px-4 py-4 leading-6 text-slate-700">{row.nudge}</td>
+                  <td class="border-b border-slate-200 px-4 py-4 leading-6 text-slate-700">{row.other}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">{comparison.strongerTitle}</h2>
+        {comparison.stronger.map((paragraph) => (
+          <p class="leading-7 text-slate-700">{paragraph}</p>
+        ))}
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">{comparison.nudgeTitle}</h2>
+        {comparison.nudge.map((paragraph) => (
+          <p class="leading-7 text-slate-700">{paragraph}</p>
+        ))}
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">Who should choose which?</h2>
+        {comparison.choose.map((paragraph) => (
+          <p class="leading-7 text-slate-700">{paragraph}</p>
+        ))}
+      </section>
+
+      <section class="space-y-4 rounded-2xl border border-indigo-100 bg-indigo-50/60 p-6 sm:p-8">
+        <h2 class="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">What African businesses should check</h2>
+        <p class="leading-7 text-slate-700">{comparison.localNote}</p>
+      </section>
+
+      <section class="space-y-6">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+            Frequently asked questions
+          </h2>
+          <p class="mt-3 leading-7 text-slate-600">
+            Short answers to common questions about Nudge and {comparison.name}.
+          </p>
+        </div>
+        <div class="divide-y divide-slate-200 border-y border-slate-200">
+          {comparison.faqs.map((faq) => (
+            <div class="py-6">
+              <h3 class="font-semibold text-slate-900">{faq.q}</h3>
+              <p class="mt-2 leading-7 text-slate-700">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="rounded-2xl bg-slate-950 px-6 py-10 text-center sm:px-10">
+        <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">See if Nudge fits your documents</h2>
+        <p class="mx-auto mt-3 max-w-2xl leading-7 text-slate-300">
+          Try the demo, compare your real questions, and check the current plan and payment details before you decide.
+        </p>
+        <a
+          href={`${APP_URL}/signup`}
+          class="mt-6 inline-flex min-h-11 items-center justify-center rounded-lg bg-indigo-500 px-5 py-2.5 font-semibold text-white transition hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          Try Nudge
+        </a>
+      </section>
+    </article>
+  </main>
+</Layout>
