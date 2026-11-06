@@ -1,7 +1,13 @@
 ---
 import Layout from '../layouts/layout.astro';
 
-const APP_URL = 'https://ai-chat-widget-q6gx.onrender.com';
+const APP_URL = 'https://app.jardini.xyz';
+
+const pricingPreview = [
+  { name: 'Free', price: 'KES 0', detail: '100 AI replies / month' },
+  { name: 'Starter', price: 'KES 300', detail: 'KES 3,000 / year' },
+  { name: 'Pro', price: 'KES 600', detail: 'KES 6,000 / year' },
+];
 
 const jsonLd = [
   {
@@ -80,27 +86,6 @@ const features = [
   },
 ];
 
-const plans = [
-  {
-    name: 'Free',
-    price: 'KSh 0',
-    note: 'For trying it out',
-    features: ['1 chat widget', '50 AI replies / month', '1 document'],
-  },
-  {
-    name: 'Pro',
-    price: 'KSh 300',
-    note: 'per month',
-    features: ['5 chat widgets', '2,000 AI replies / month', 'Unlimited documents'],
-    highlight: true,
-  },
-  {
-    name: 'Business',
-    price: 'KSh 600',
-    note: 'per month',
-    features: ['Unlimited widgets', '10,000 AI replies / month', 'Team members'],
-  },
-];
 ---
 
 <Layout
@@ -135,7 +120,25 @@ const plans = [
             See demo
           </a>
         </div>
-        <p class="mt-4 text-sm text-slate-500">No credit card needed to get started.</p>
+        <p class="mt-4 text-sm font-medium text-indigo-700">Free forever plan. No card needed.</p>
+
+        <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm">
+          <div class="flex items-center justify-between gap-3">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Pricing</p>
+            <a href="/pricing" class="text-sm font-semibold text-indigo-700 hover:text-indigo-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              View plans
+            </a>
+          </div>
+          <div class="mt-4 grid gap-3 sm:grid-cols-3">
+            {pricingPreview.map((plan) => (
+              <div class="rounded-xl border border-slate-200 bg-white p-3 text-left">
+                <p class="text-sm font-semibold text-slate-900">{plan.name}</p>
+                <p class="mt-1 text-lg font-semibold text-slate-950">{plan.price}</p>
+                <p class="mt-1 text-xs text-slate-500">{plan.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       <div
@@ -251,19 +254,11 @@ const plans = [
         </a>
       </div>
       <div class="mt-10 grid gap-5 md:grid-cols-3">
-        {plans.map((plan) => (
-          <article class={`rounded-2xl border p-6 ${plan.highlight ? 'border-indigo-600 ring-1 ring-indigo-600' : 'border-slate-200'}`}>
+        {pricingPreview.map((plan) => (
+          <article class="rounded-2xl border border-slate-200 bg-white p-6">
             <h3 class="text-lg font-semibold text-slate-900">{plan.name}</h3>
             <p class="mt-5 text-4xl font-semibold tracking-tight text-slate-950">{plan.price}</p>
-            <p class="mt-1 text-sm text-slate-500">{plan.note}</p>
-            <ul class="mt-6 space-y-3">
-              {plan.features.map((feature) => (
-                <li class="flex gap-2 text-sm text-slate-600">
-                  <span class="font-semibold text-indigo-700" aria-hidden="true">✓</span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
+            <p class="mt-1 text-sm text-slate-500">{plan.detail}</p>
           </article>
         ))}
       </div>
