@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/layout.astro';
-
-const APP_URL = 'https://app.jardini.xyz';
+import { SIGNUP_URL, SITE_URL } from '../config';
 
 const pricingPreview = [
   { name: 'Free', price: 'KES 0', detail: '100 AI replies / month' },
@@ -13,13 +12,13 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'NUDGE',
-    url: 'https://www.jardini.xyz',
+    name: 'Nudge',
+    url: SITE_URL,
   },
   {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'NUDGE',
+    name: 'Nudge',
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',
     description:
@@ -108,7 +107,7 @@ const features = [
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <a
-            href={`${APP_URL}/signup`}
+            href={SIGNUP_URL}
             class="inline-flex min-h-12 items-center justify-center rounded-lg bg-indigo-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Start free
@@ -275,7 +274,7 @@ const features = [
           Bring your documents together with a chat experience that’s simple to set up.
         </p>
         <a
-          href={`${APP_URL}/signup`}
+          href={SIGNUP_URL}
           class="mt-8 inline-flex min-h-12 items-center justify-center rounded-lg bg-indigo-500 px-6 py-3 font-semibold text-white transition hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           Start free

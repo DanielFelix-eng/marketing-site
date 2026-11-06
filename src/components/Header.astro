@@ -1,5 +1,5 @@
 ---
-const APP_URL = 'https://ai-chat-widget-q6gx.onrender.com';
+import { LOGIN_URL, SIGNUP_URL } from '../config';
 ---
 <header class="border-b border-slate-200 bg-white/90">
   <nav aria-label="Main navigation" class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
@@ -10,9 +10,9 @@ const APP_URL = 'https://ai-chat-widget-q6gx.onrender.com';
     <div class="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm font-medium">
       <a href="/#features" class="text-slate-600 transition hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-600">Features</a>
       <a href="/pricing" class="text-slate-600 transition hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-600">Pricing</a>
-      <a href={`${APP_URL}/login`} class="text-slate-600 transition hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-600">Log in</a>
+      <a href={LOGIN_URL} class="text-slate-600 transition hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-600">Log in</a>
       <a
-        href={`${APP_URL}/signup`}
+        href={SIGNUP_URL}
         class="inline-flex min-h-10 items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 font-semibold text-white transition hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
       >
         Start free

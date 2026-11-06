@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/layout.astro';
-
-const APP_URL = 'https://app.jardini.xyz';
+import { SIGNUP_URL, SITE_URL } from '../config';
 
 const plans = [
   {
@@ -12,7 +11,7 @@ const plans = [
     billingNote: 'Free forever',
     badge: 'Powered by Nudge',
     cta: 'Start free',
-    href: `${APP_URL}/signup`,
+    href: SIGNUP_URL,
     featured: false,
     features: ['100 AI replies/month', '1 widget', '3 documents', '1 seat', 'Powered by Nudge branding'],
     compare: {
@@ -35,7 +34,7 @@ const plans = [
     billingNote: 'KES 300 /month',
     badge: 'For small teams',
     cta: 'Get started',
-    href: `${APP_URL}/signup?plan=starter`,
+    href: `${SIGNUP_URL}?plan=starter`,
     featured: false,
     features: ['1,500 AI replies/month', '1 widget', '25 documents', '2 seats', 'Remove branding'],
     compare: {
@@ -58,7 +57,7 @@ const plans = [
     billingNote: 'KES 600 /month',
     badge: 'Most popular',
     cta: 'Get started',
-    href: `${APP_URL}/signup?plan=pro`,
+    href: `${SIGNUP_URL}?plan=pro`,
     featured: true,
     features: ['6,000 AI replies/month', '3 widgets', '100 documents', '5 seats', 'Remove branding', 'Analytics', 'Live handoff to a human'],
     compare: {
@@ -81,7 +80,7 @@ const plans = [
     billingNote: 'KES 16,500 /month',
     badge: 'For growing teams',
     cta: 'Get started',
-    href: `${APP_URL}/signup?plan=business`,
+    href: `${SIGNUP_URL}?plan=business`,
     featured: false,
     features: ['25,000 AI replies/month', '10 widgets', '500 documents', '15 seats', 'Remove branding', 'Analytics', 'Live handoff to a human', 'API access', 'Priority support'],
     compare: {
@@ -190,7 +189,7 @@ const productJsonLd = {
       name: `${plan.name} plan`,
       price: String(plan.monthly),
       priceCurrency: 'KES',
-      url: `${APP_URL}/signup?plan=${plan.key}`
+      url: `${SIGNUP_URL}?plan=${plan.key}`
     }))
 };
 ---
