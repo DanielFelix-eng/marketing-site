@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/layout.astro';
+---
+
+<Layout
+  title="Nudge demo | See how it works"
+  description="Watch the Nudge demo and read a quick summary of how the AI chat widget answers questions from your business documents."
+>
+  <main class="mx-auto max-w-5xl px-6 py-16 sm:py-20">
+    <div class="max-w-3xl">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-700">Product demo</p>
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
+        See Nudge in action
+      </h1>
+      <p class="mt-4 text-lg leading-8 text-slate-600">
+        Nudge turns your PDFs, help guides, and internal knowledge into a helpful website chat experience.
+      </p>
+    </div>
+
+    <div class="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-200/60">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/BlESyKnSQgY"
+        title="Nudge demo video"
+        loading="lazy"
+        class="aspect-video w-full"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <article class="mt-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-base leading-8 text-slate-700">
+      <h2 class="text-2xl font-semibold text-slate-900">Transcript summary</h2>
+      <p class="mt-4">
+        The demo shows how a business can upload documents like FAQs, onboarding guides, and policy PDFs, then let Nudge answer customer questions directly on the website.
+      </p>
+      <p class="mt-4">
+        Instead of waiting for a team member to reply manually, visitors get fast, grounded answers based on the company’s own information.
+        The assistant can help with account questions, product details, and common next steps while keeping the conversation consistent with the brand.
+      </p>
+      <p class="mt-4">
+        This makes support more responsive, reduces repetitive questions, and gives customers a more helpful experience without slowing down the team.
+      </p>
+    </article>
+  </main>
+</Layout>

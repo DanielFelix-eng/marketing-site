@@ -51,10 +51,9 @@ const schemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <div class="flex min-h-screen flex-col">
       <Header />
       <div class="flex-1">
-        <slot />
+          <slot />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-    <script src="https://app.jardini.xyz/widget.js" data-api-url="https://app.jardini.xyz" data-public-key="e81fcaa1f51a79eb4414529e828133d8d54f086200e11a9a" async></script>
   </body>
 </html>
