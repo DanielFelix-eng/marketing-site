@@ -47,8 +47,9 @@ const schemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
       <script type="application/ld+json" set:html={JSON.stringify(s)} />
     ))}
   </head>
-  <body class="bg-white font-sans text-slate-900 antialiased">
-    <div class="flex min-h-screen flex-col">
+  <body class="bg-[#F7F5F0] font-sans text-[#14161B] antialiased">
+    <div class="scroll-dot-grid" aria-hidden="true"></div>
+    <div class="site-shell flex min-h-screen flex-col">
       <Header />
       <div class="flex-1">
           <slot />
@@ -56,4 +57,27 @@ const schemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
         <Footer />
       </div>
   </body>
+  <script>
+    const dotGrid = document.querySelector<HTMLElement>('.scroll-dot-grid');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let updateScheduled = false;
+
+    if (dotGrid && !reducedMotion) {
+      const updateParallax = () => {
+        dotGrid.style.transform = `translate3d(0, ${window.scrollY * 0.02}px, 0)`;
+        updateScheduled = false;
+      };
+
+      window.addEventListener(
+        'scroll',
+        () => {
+          if (!updateScheduled) {
+            updateScheduled = true;
+            window.requestAnimationFrame(updateParallax);
+          }
+        },
+        { passive: true },
+      );
+    }
+  </script>
 </html>

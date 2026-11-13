@@ -1,21 +1,60 @@
 ---
 import { LOGIN_URL, SIGNUP_URL } from '../config';
 ---
-<header class="border-b border-slate-200 bg-white/90">
+<header class="border-b border-[#E2DED5] bg-[#F7F5F0]">
   <nav aria-label="Main navigation" class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
-    <a href="/" aria-label="Nudge home" class="inline-flex items-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-600">
-      <img src="/logo.png" alt="Nudge logo" class="h-10 w-auto" />
+    <a href="/" aria-label="Nudge home" class="nudge-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1F4FD8]">
+      <span class="nudge-brand__mark" aria-hidden="true"><span>N</span></span>
+      <span class="nudge-brand__name">Nudge</span>
     </a>
     <div class="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm font-medium">
-      <a href="/#features" class="text-slate-600 transition hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-600">Features</a>
-      <a href="/pricing" class="text-slate-600 transition hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-600">Pricing</a>
-      <a href={LOGIN_URL} class="text-slate-600 transition hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-600">Log in</a>
+      <a href="/#features" class="text-slate-600 transition hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1F4FD8]">Features</a>
+      <a href="/pricing" class="text-slate-600 transition hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1F4FD8]">Pricing</a>
+      <a href={LOGIN_URL} class="text-slate-600 transition hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1F4FD8]">Log in</a>
       <a
         href={SIGNUP_URL}
-        class="inline-flex min-h-10 items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 font-semibold text-white transition hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        class="inline-flex min-h-10 items-center justify-center rounded-lg bg-[#1F4FD8] px-4 py-2 font-semibold text-white transition hover:bg-[#173DAE] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F4FD8]"
       >
         Start free
       </a>
     </div>
   </nav>
 </header>
+
+<style>
+  .nudge-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    color: #14161b;
+    text-decoration: none;
+  }
+
+  .nudge-brand__mark {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    place-items: center;
+    transform: rotate(45deg);
+    border: 2px solid #263654;
+    border-radius: 9px;
+    background: #263654;
+    box-shadow: inset 0 0 0 3px #f7d36f;
+  }
+
+  .nudge-brand__mark span {
+    transform: rotate(-45deg);
+    color: #f7d36f;
+    font-family: Georgia, serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .nudge-brand__name {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.045em;
+  }
+</style>
